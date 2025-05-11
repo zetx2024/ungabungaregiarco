@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Academic Research Competition - Registration</title>
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --secondary-blue: #003366;
+            --gold: #FFD700;
+            --light-gold: #FFECB3;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        h3 {
+            color: var(--secondary-blue);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .dates-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .date-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--light-gray);
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .date-card h4 {
+            color: var(--secondary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .date-card p {
+            font-weight: bold;
+        }
+
+        .fees-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .fee-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .fee-card h4 {
+            color: var(--secondary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .fee-card ul {
+            list-style-position: inside;
+        }
+
+        .fee-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .categories-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .category-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-right: 4px solid var(--gold);
+        }
+
+        .category-card h4 {
+            color: var(--secondary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .btn {
+            position: relative;
+            overflow: hidden;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-blue);
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--dark-gray);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--light-gold);
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.7);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .links-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .link-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .link-item a {
+            display: block;
+            padding: 1rem;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .link-item a:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .dates-container, .fees-container, .categories-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .date-card, .fee-card, .category-card {
+                min-width: 100%;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .links-container {
+                flex-direction: column;
+            }
+
+            .link-item {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>International Academic Research Competition</h1>
+            <p>Showcase your research skills on a global platform</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Important Dates</h2>
+            <div class="dates-container">
+                <div class="date-card">
+                    <h4>Early Registration Deadline</h4>
+                    <p>July 01, 2025 (23:59 EST)</p>
+                </div>
+                <div class="date-card">
+                    <h4>Regular Registration Deadline</h4>
+                    <p>August 28, 2025 (23:59 EST)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Registration Fees</h2>
+            <div class="fees-container">
+                <div class="fee-card">
+                    <h4>International Participants</h4>
+                    <ul>
+                        <li>Early Registration: $10</li>
+                        <li>Regular Registration: $15</li>
+                    </ul>
+                </div>
+                <div class="fee-card">
+                    <h4>Bangladeshi Participants</h4>
+                    <ul>
+                        <li>Early Registration: 500 TK</li>
+                        <li>Regular Registration: 700 TK</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Competition Categories</h2>
+            <div class="categories-container">
+                <div class="category-card">
+                    <h4>Junior Category</h4>
+                    <p>Class/Grade 8 to 12 students</p>
+                </div>
+                <div class="category-card">
+                    <h4>Senior Category</h4>
+                    <p>Bachelor 1st year to any educational level (University/College/National/Diploma/any)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Register Now</h2>
+            <p>Select your category and participant type to proceed with registration:</p>
+            
+            <div class="buttons-container">
+                <button class="btn" id="btnIntJunior">International Junior</button>
+                <button class="btn" id="btnIntSenior">International Senior</button>
+                <button class="btn btn-gold" id="btnBdJunior">Bangladeshi Junior</button>
+                <button class="btn btn-gold" id="btnBdSenior">Bangladeshi Senior</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Important Links</h2>
+            <div class="links-container">
+                <div class="link-item">
+                    <a href="#" id="judgingCriteria">Judging Criteria</a>
+                </div>
+                <div class="link-item">
+                    <a href="#" id="proposalRubric">Research Proposal Rubric</a>
+                </div>
+                <div class="link-item">
+                    <a href="#" id="videoRubric">Video Pitch Rubric</a>
+                </div>
+                <div class="link-item">
+                    <a href="#" id="winnersList">Previous Winners List</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 International Academic Research Competition. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Ripple effect for buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Button click handlers (replace with actual Google Form links)
+        document.getElementById('btnIntJunior').addEventListener('click', () => {
+            alert('Redirecting to International Junior registration form');
+            // window.location.href = 'https://forms.google.com/int-junior';
+        });
+
+        document.getElementById('btnIntSenior').addEventListener('click', () => {
+            alert('Redirecting to International Senior registration form');
+            // window.location.href = 'https://forms.google.com/int-senior';
+        });
+
+        document.getElementById('btnBdJunior').addEventListener('click', () => {
+            alert('Redirecting to Bangladeshi Junior registration form');
+            // window.location.href = 'https://forms.google.com/bd-junior';
+        });
+
+        document.getElementById('btnBdSenior').addEventListener('click', () => {
+            alert('Redirecting to Bangladeshi Senior registration form');
+            // window.location.href = 'https://forms.google.com/bd-senior';
+        });
+
+        // Link handlers
+        document.getElementById('judgingCriteria').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Opening Judging Criteria document');
+            // window.location.href = 'judging-criteria.pdf';
+        });
+
+        document.getElementById('proposalRubric').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Opening Research Proposal Rubric document');
+            // window.location.href = 'proposal-rubric.pdf';
+        });
+
+        document.getElementById('videoRubric').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Opening Video Pitch Rubric document');
+            // window.location.href = 'video-rubric.pdf';
+        });
+
+        document.getElementById('winnersList').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Opening Previous Winners List');
+            // window.location.href = 'winners-list.html';
+        });
+    </script>
+</body>
+</html>
