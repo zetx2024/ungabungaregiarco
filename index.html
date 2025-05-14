@@ -3,116 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>International Academic Research Competition - Registration 2025</title>
+    <title>IARCO 2025 | Registration</title>
+    <link rel="icon" href="https://iarco.org/assets/logo.png"/>
+    <link rel="canonical" href="https://iarco.org/registration"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://kit.fontawesome.com/0d89f9ac34.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <style>
+        /* Enhanced Blue & Gold Theme - Registration Page */
         :root {
-            --primary-blue: #0056b3;
-            --secondary-blue: #003366;
-            --gold: #FFD700;
-            --light-gold: #FFECB3;
+            --primary-blue: #003366;
+            --secondary-blue: #0749b3;
+            --accent-blue: #4b9cd3;
+            --primary-gold: #ffd700;
+            --secondary-gold: #daa520;
             --white: #ffffff;
-            --light-gray: #f5f5f5;
-            --dark-gray: #333333;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #343a40;
+            --text-color: #2c3e50;
+            --header-bg: rgba(0, 51, 102, 0.95);
+            --footer-bg: rgba(0, 51, 102, 0.97);
+            --modal-bg: linear-gradient(135deg, var(--primary-blue) 0%, #001a33 100%);
+            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
         }
 
         body {
-            background-color: var(--light-gray);
-            color: var(--dark-gray);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
             line-height: 1.6;
+            background-color: var(--light-gray);
+            margin: 0;
+            padding: 0;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
+        .registration-header {
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
             color: var(--white);
-            padding: 2rem 0;
+            padding: 4rem 0;
             text-align: center;
-            border-bottom: 5px solid var(--gold);
             margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--primary-gold);
         }
 
-        header h1 {
+        .registration-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/pattern.png') repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .registration-header h1 {
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
         }
 
-        header p {
+        .registration-header p {
             font-size: 1.2rem;
             opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .section {
+        .registration-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .registration-section {
             background-color: var(--white);
-            border-radius: 8px;
-            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             padding: 2rem;
             margin-bottom: 2rem;
         }
 
-        h2 {
+        .registration-section h2 {
             color: var(--primary-blue);
             margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--primary-gold);
+            font-weight: 700;
         }
 
-        h3 {
+        .registration-section h3 {
             color: var(--secondary-blue);
             margin: 1.5rem 0 1rem;
+            font-weight: 600;
         }
 
-        .dates-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
+        .dates-container, .fees-container, .categories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
             margin-bottom: 2rem;
         }
 
-        .date-card {
-            flex: 1;
-            min-width: 250px;
+        .date-card, .fee-card, .category-card {
             background-color: var(--light-gray);
-            border-left: 4px solid var(--gold);
             padding: 1.5rem;
-            border-radius: 4px;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .date-card {
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .date-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .date-card h4 {
             color: var(--secondary-blue);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .date-card p {
-            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
 
-        .fees-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
+        .date-card p strong {
+            color: var(--primary-blue);
         }
 
         .fee-card {
-            flex: 1;
-            min-width: 250px;
-            background-color: var(--light-gray);
-            padding: 1.5rem;
-            border-radius: 4px;
             border-top: 4px solid var(--primary-blue);
+        }
+
+        .fee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .fee-card h4 {
@@ -121,26 +160,31 @@
         }
 
         .fee-card ul {
-            list-style-position: inside;
+            list-style-type: none;
+            padding-left: 0;
         }
 
         .fee-card li {
+            position: relative;
+            padding-left: 1.5rem;
             margin-bottom: 0.5rem;
         }
 
-        .categories-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
+        .fee-card li::before {
+            content: "•";
+            color: var(--primary-gold);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
 
         .category-card {
-            flex: 1;
-            min-width: 250px;
-            background-color: var(--light-gray);
-            padding: 1.5rem;
-            border-radius: 4px;
-            border-right: 4px solid var(--gold);
+            border-right: 4px solid var(--primary-gold);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .category-card h4 {
@@ -149,46 +193,56 @@
         }
 
         .buttons-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            justify-content: center;
             margin: 2rem 0;
         }
 
-        .btn {
+        .reg-btn {
             position: relative;
             overflow: hidden;
             background-color: var(--primary-blue);
-            color: var(--white);
+            color: var(--white) !important;
             border: none;
-            padding: 1rem 2rem;
+            padding: 1rem;
             font-size: 1rem;
-            font-weight: bold;
-            border-radius: 4px;
+            font-weight: 600;
+            border-radius: var(--border-radius);
             cursor: pointer;
             transition: all 0.3s ease;
-            min-width: 200px;
             text-align: center;
-            box-shadow: var(--shadow);
+            box-shadow: var(--box-shadow);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
         }
 
-        .btn:hover {
+        .reg-btn:hover {
             background-color: var(--secondary-blue);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .btn:active {
+        .reg-btn:active {
             transform: translateY(0);
         }
 
-        .btn-gold {
-            background-color: var(--gold);
-            color: var(--dark-gray);
+        .reg-btn i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
-        .btn-gold:hover {
-            background-color: var(--light-gold);
+        .reg-btn-gold {
+            background-color: var(--primary-gold);
+            color: var(--primary-blue) !important;
+        }
+
+        .reg-btn-gold:hover {
+            background-color: var(--secondary-gold);
         }
 
         .ripple {
@@ -208,212 +262,330 @@
         }
 
         .links-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
             margin-top: 2rem;
         }
 
-        .link-item {
-            flex: 1;
-            min-width: 200px;
-        }
-
         .link-item a {
-            display: block;
+            display: flex;
+            align-items: center;
             padding: 1rem;
             background-color: var(--primary-blue);
-            color: var(--white);
+            color: var(--white) !important;
             text-decoration: none;
-            border-radius: 4px;
-            text-align: center;
-            transition: background-color 0.3s;
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            height: 100%;
         }
 
         .link-item a:hover {
             background-color: var(--secondary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        footer {
+        .link-item i {
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .registration-footer {
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
             color: var(--white);
             text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 2rem;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .registration-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .registration-header p {
+                font-size: 1.1rem;
+            }
+            
+            .dates-container, .fees-container, .categories-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
-            header h1 {
+            .registration-header {
+                padding: 3rem 0;
+            }
+            
+            .registration-header h1 {
                 font-size: 2rem;
             }
-
-            .dates-container, .fees-container, .categories-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .date-card, .fee-card, .category-card {
-                min-width: 100%;
-            }
-
-            .buttons-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            .section {
+            
+            .registration-section {
                 padding: 1.5rem;
             }
-
-            .links-container {
-                flex-direction: column;
+            
+            .buttons-container {
+                grid-template-columns: 1fr;
             }
-
-            .link-item {
-                min-width: 100%;
+            
+            .reg-btn {
+                min-height: 80px;
             }
         }
+
+        @media (max-width: 576px) {
+            .registration-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .registration-header p {
+                font-size: 1rem;
+            }
+            
+            .dates-container, .fees-container, .categories-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .links-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation for cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .date-card, .fee-card, .category-card, .reg-btn, .link-item {
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .date-card { animation-delay: 0.1s; }
+        .fee-card { animation-delay: 0.2s; }
+        .category-card { animation-delay: 0.3s; }
+        .reg-btn:nth-child(1) { animation-delay: 0.4s; }
+        .reg-btn:nth-child(2) { animation-delay: 0.5s; }
+        .reg-btn:nth-child(3) { animation-delay: 0.6s; }
+        .reg-btn:nth-child(4) { animation-delay: 0.7s; }
+        .link-item:nth-child(1) { animation-delay: 0.8s; }
+        .link-item:nth-child(2) { animation-delay: 0.9s; }
+        .link-item:nth-child(3) { animation-delay: 1.0s; }
+        .link-item:nth-child(4) { animation-delay: 1.1s; }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Navigation -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <h1>International Academic Research Competition<sup>2nd</sup> 2025</h1>
-            <p>Showcase your research skills on a global platform</p>
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand text-uppercase" href="https://iarco.org//">
+                    <img src="https://iarco.org/assets/logo.png" width="80%" height="70px" class="d-inline-block align-top">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-chart-bar"></i> About</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="what-is-iarco"><i class="fas fa-question"></i> What is IARCO?</a></li>
+                            <li><a class="dropdown-item" href="prizes"><i class="fas fa-trophy"></i> Prizes</a></li>
+                            <li><a class="dropdown-item" href="partners"><i class="fas fa-handshake"></i> Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="timeline"><i class="fas fa-calendar-alt"></i> Timeline</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fab fa-hubspot"></i> Competition Hubs</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="bootcamps"><i class="fas fa-dumbbell"></i> Bootcamps</a></li>
+                            <li><a class="dropdown-item" href="guidelines"><i class="fas fa-chalkboard-teacher"></i> Guidelines</a></li>
+                            <li><a class="dropdown-item" href="2024-finalists"><i class="fas fa-running"></i> 2024 Finalists</a></li>
+                            <li><a class="dropdown-item" href="2024-winners"><i class="fas fa-trophy"></i> 2024 Winners</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq"><i class="fas fa-question"></i> FAQs</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Header -->
+    <header class="registration-header">
+        <div class="registration-container">
+            <h1>IARCO 2025 Registration</h1>
+            <p>Join the 2nd International Academic Research Competition and showcase your research skills on a global platform</p>
         </div>
     </header>
 
-    <main class="container">
-        <section class="section">
-    <h2>Important Dates</h2>
-    <div class="dates-container">
-        <div class="date-card">
-            <h4>Early Registration Deadline</h4>
-            <p>July 01, 2025 (23:59 EST)</p>
-        </div>
-        <div class="date-card">
-            <h4>Regular Registration Deadline</h4>
-            <p>August 28, 2025 (23:59 EST)</p>
-        </div>
-        <div class="date-card">
-            <h4>Participant-Exclusive Bootcamps</h4>
-            <p><strong>Access opens:</strong> September 10th</p>
-            <p>Bootcamps are available on-demand starting September 10th.</p>
-            <p>Access instructions will be emailed before September 10th.</p>
-        </div>
-        <div class="date-card">
-            <h4>Proposal Submission Deadline</h4>
-            <p><strong>Submit by:</strong> October 5th (23:59 EST)</p>
-            <p>Maximum 2 pages (excluding cover page, title, citations, and references).</p>
-            <p>Submission link emailed August 24th.</p>
-        </div>
-        <div class="date-card">
-            <h4>Qualification Round Winners</h4>
-            <p><strong>Announced:</strong> October 8th (23:59 EST)</p>
-            <p>Top 100 proposals advance to Final Round.</p>
-        </div>
-        <div class="date-card">
-            <h4>Video Pitch Submission</h4>
-            <p><strong>Submit by:</strong> October 15th (23:59 EST)</p>
-            <p>2.5-5 minute video presentation with slides.</p>
-        </div>
-        <div class="date-card">
-            <h4>Global Winners Announcement</h4>
-            <p><strong>Announced:</strong> October 25th (23:59 EST)</p>
-            <p>Top 3 winners in each category announced.</p>
-        </div>
-    </div>
-</section>
+    <main class="registration-container">
+        <section class="registration-section">
+            <h2><i class="fas fa-calendar-day"></i> Important Dates</h2>
+            <div class="dates-container">
+                <div class="date-card">
+                    <h4>Early Registration Deadline</h4>
+                    <p><strong>July 01, 2025</strong> (23:59 EST)</p>
+                </div>
+                <div class="date-card">
+                    <h4>Regular Registration Deadline</h4>
+                    <p><strong>August 28, 2025</strong> (23:59 EST)</p>
+                </div>
+                <div class="date-card">
+                    <h4>Participant-Exclusive Bootcamps</h4>
+                    <p><strong>Access opens:</strong> September 10th</p>
+                    <p>Bootcamps are available on-demand starting September 10th.</p>
+                    <p>Access instructions will be emailed before September 10th.</p>
+                </div>
+                <div class="date-card">
+                    <h4>Proposal Submission Deadline</h4>
+                    <p><strong>Submit by:</strong> October 5th (23:59 EST)</p>
+                    <p>Maximum 2 pages (excluding cover page, title, citations, and references).</p>
+                    <p>Submission link emailed August 24th.</p>
+                </div>
+                <div class="date-card">
+                    <h4>Qualification Round Winners</h4>
+                    <p><strong>Announced:</strong> October 8th (23:59 EST)</p>
+                    <p>Top 100 proposals advance to Final Round.</p>
+                </div>
+                <div class="date-card">
+                    <h4>Video Pitch Submission</h4>
+                    <p><strong>Submit by:</strong> October 15th (23:59 EST)</p>
+                    <p>2.5-5 minute video presentation with slides.</p>
+                </div>
+                <div class="date-card">
+                    <h4>Global Winners Announcement</h4>
+                    <p><strong>Announced:</strong> October 25th (23:59 EST)</p>
+                    <p>Top 3 winners in each category announced.</p>
+                </div>
+            </div>
+        </section>
 
-        <section class="section">
-            <h2>Registration Fees</h2>
+        <section class="registration-section">
+            <h2><i class="fas fa-money-bill-wave"></i> Registration Fees</h2>
             <div class="fees-container">
                 <div class="fee-card">
-                    <h4>International Participants</h4>
+                    <h4><i class="fas fa-globe-americas"></i> International Participants</h4>
                     <ul>
                         <li>Early Registration: $10</li>
                         <li>Regular Registration: $15</li>
+                        <li>Includes access to all bootcamps and resources</li>
                     </ul>
                 </div>
                 <div class="fee-card">
-                    <h4>Bangladeshi Participants</h4>
+                    <h4><i class="fas fa-flag"></i> Bangladeshi Participants</h4>
                     <ul>
                         <li>Early Registration: 500 TK</li>
                         <li>Regular Registration: 700 TK</li>
+                        <li>Includes access to all bootcamps and resources</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2>Competition Categories</h2>
+        <section class="registration-section">
+            <h2><i class="fas fa-layer-group"></i> Competition Categories</h2>
             <div class="categories-container">
                 <div class="category-card">
-                    <h4>Junior Category</h4>
+                    <h4><i class="fas fa-user-graduate"></i> Junior Category</h4>
                     <p>Class/Grade 8 to 12 students</p>
+                    <p>Perfect for high school students looking to develop research skills</p>
                 </div>
                 <div class="category-card">
-                    <h4>Senior Category</h4>
+                    <h4><i class="fas fa-user-tie"></i> Senior Category</h4>
                     <p>Bachelor 1st year to any educational level (University/College/National/Diploma/any)</p>
+                    <p>For undergraduate and graduate students pursuing advanced research</p>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2>Register Now</h2>
+        <section class="registration-section">
+            <h2><i class="fas fa-user-plus"></i> Register Now</h2>
             <p>Select your category and participant type to proceed with registration:</p>
             
             <div class="buttons-container">
-                <button class="btn" id="btnIntJunior">International Junior</button>
-                <button class="btn" id="btnIntSenior">International Senior</button>
-                <button class="btn btn-gold" id="btnBdJunior">Bangladeshi Junior</button>
-                <button class="btn btn-gold" id="btnBdSenior">Bangladeshi Senior</button>
+                <a href="https://forms.gle/N8FbUMmpubggBxNC7" class="reg-btn" id="btnIntJunior">
+                    <i class="fas fa-globe-americas"></i>
+                    <span>International Junior</span>
+                </a>
+                <a href="https://forms.gle/CXzEtAo8qs1SpHGk9" class="reg-btn" id="btnIntSenior">
+                    <i class="fas fa-globe"></i>
+                    <span>International Senior</span>
+                </a>
+                <a href="https://forms.gle/N8FbUMmpubggBxNC7" class="reg-btn reg-btn-gold" id="btnBdJunior">
+                    <i class="fas fa-flag"></i>
+                    <span>Bangladeshi Junior</span>
+                </a>
+                <a href="https://forms.gle/CXzEtAo8qs1SpHGk9" class="reg-btn reg-btn-gold" id="btnBdSenior">
+                    <i class="fas fa-flag-usa"></i>
+                    <span>Bangladeshi Senior</span>
+                </a>
             </div>
         </section>
 
-        <section class="section">
-            <h2>Important Links</h2>
+        <section class="registration-section">
+            <h2><i class="fas fa-link"></i> Important Links</h2>
             <div class="links-container">
                 <div class="link-item">
-                    <a href="#" id="judgingCriteria">Judging Criteria</a>
+                    <a href="judging" id="judgingCriteria">
+                        <i class="fas fa-gavel"></i>
+                        <span>Judging Criteria</span>
+                    </a>
                 </div>
                 <div class="link-item">
-                    <a href="#" id="proposalRubric">Research Proposal Rubric</a>
+                    <a href="assets/doc/proposal_rubric.pdf" id="proposalRubric">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Research Proposal Rubric</span>
+                    </a>
                 </div>
                 <div class="link-item">
-                    <a href="#" id="videoRubric">Video Pitch Rubric</a>
+                    <a href="assets/doc/video_rubric.pdf" id="videoRubric">
+                        <i class="fas fa-video"></i>
+                        <span>Video Pitch Rubric</span>
+                    </a>
                 </div>
                 <div class="link-item">
-                    <a href="#" id="winnersList">Previous Winners List 2024</a>
+                    <a href="2024-winners" id="winnersList">
+                        <i class="fas fa-trophy"></i>
+                        <span>Previous Winners List 2024</span>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
+    <footer class="registration-footer">
+        <div class="registration-container">
             <p>&copy; 2024 - 2025 International Academic Research Competition. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script>
         // Ripple effect for buttons
-        document.querySelectorAll('.btn').forEach(button => {
+        document.querySelectorAll('.reg-btn').forEach(button => {
             button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const x = e.clientX - e.target.getBoundingClientRect().left;
-                const y = e.clientY - e.target.getBoundingClientRect().top;
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
                 
                 const ripple = document.createElement('span');
                 ripple.classList.add('ripple');
@@ -428,50 +600,25 @@
             });
         });
 
-        // Button click handlers (replace with actual Google Form links)
+        // Track registration button clicks
         document.getElementById('btnIntJunior').addEventListener('click', () => {
-            alert('Redirecting to International Junior registration form');
-            // window.location.href = 'https://forms.google.com/int-junior';
+            // Add analytics tracking here
+            console.log('International Junior registration clicked');
         });
 
         document.getElementById('btnIntSenior').addEventListener('click', () => {
-            alert('Redirecting to International Senior registration form');
-            // window.location.href = 'https://forms.google.com/int-senior';
+            // Add analytics tracking here
+            console.log('International Senior registration clicked');
         });
 
         document.getElementById('btnBdJunior').addEventListener('click', () => {
-            alert('Redirecting to Bangladeshi Junior registration form');
-            // window.location.href = 'https://forms.google.com/bd-junior';
+            // Add analytics tracking here
+            console.log('Bangladeshi Junior registration clicked');
         });
 
         document.getElementById('btnBdSenior').addEventListener('click', () => {
-            alert('Redirecting to Bangladeshi Senior registration form');
-            // window.location.href = 'https://forms.google.com/bd-senior';
-        });
-
-        // Link handlers
-        document.getElementById('judgingCriteria').addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Opening Judging Criteria document');
-            // window.location.href = 'https://iarco.org/judging';
-        });
-
-        document.getElementById('proposalRubric').addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Opening Research Proposal Rubric document');
-            // window.location.href = 'https://iarco.org/assets/doc/proposal_rubric.pdf';
-        });
-
-        document.getElementById('videoRubric').addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Opening Video Pitch Rubric document');
-            // window.location.href = 'https://iarco.org/assets/doc/video_rubric.pdf';
-        });
-
-        document.getElementById('winnersList').addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Opening Previous Winners List');
-            // window.location.href = 'https://iarco.org/2024-winners';
+            // Add analytics tracking here
+            console.log('Bangladeshi Senior registration clicked');
         });
     </script>
 </body>
